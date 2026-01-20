@@ -1,0 +1,13 @@
+#!/bin/bash
+# chkconfig: 345 99 10
+# description: OrderTrack Service
+
+case "$1" in
+  start)
+    echo "Starting OrderTrack"
+    java -jar /opt/ordertrack/app.jar &
+    ;;
+  stop)
+    pkill -f app.jar
+    ;;
+esac
